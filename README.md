@@ -63,5 +63,5 @@ Mobile Application: Develop a mobile application to extend platform accessibilit
 
 Advanced Dispute Resolution: Implement more advanced dispute resolution mechanisms for complex cases.
 
-License
+## License
 This project is released under the MIT License.
