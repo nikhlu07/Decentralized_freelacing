@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+</head>
+<body>
+    <div id="main">
+        <div id="page">
+            <nav>
+                <h3><a href="index.html">Operation Code</a></h3>
+                <div class="but">
+                    <button><a href="seller.html">Seller</a></button>
+                    <button><a href="buyer.html">Buyer</a></button>
+                    <button id="create-account-button">Create Account</button>
+
+                    <div id="popup-container" class="hidden" style="display: none;">
+                        <div id="popup">
+                            <h2>Choose Your Role</h2>
+                            <button id="buyer-button"><a href="creat_buyer.html">Buyer</a></button>
+                            <button id="seller-button"><a href="creat_seller.html">Seller</a></button>
+                            <br>
+                            <button id="close-popup-button">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+                
+            </nav>
+            <div class="slideshow-container">
+                <video id="myVideo" src="Digital.mp4" muted  loop  autoplay></video>
+            </div>
+        </div>
+        <div id="page2">
+            <div id="about-us-container">
+            <h1>About Us</h1>
+            <p>At Opreation, we're on a mission to revolutionize the freelance industry. Our team, composed of skilled and passionate individuals, is driven by a common vision: to provide secure, efficient, and transparent solutions for both freelancers and clients.</p>
+            </div>
+            </div>
+        <!-- about us section -->
+        <div id="page1">
+            <h1 class="team-leaders-heading">Team</h1>
+            <div class="card-container">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="image1.jpg" alt="Image 1">
+                    </div>
+                    <div class="card-name">Card 1</div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="image2.jpg" alt="Image 2">
+                    </div>
+                    <div class="card-name">Card 2</div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="image3.jpg" alt="Image 3">
+                    </div>
+                    <div class "card-name">Card 3</div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="image4.jpg" alt="Image 4">
+                    </div>
+                    <div class="card-name">Card 4</div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="Uday Sharma.png" alt="Image 5">
+                    </div>
+                    <div class="card-name">Card 5</div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="image6.jpg" alt="Image 6">
+                    </div>
+                    <div class="card-name">Card 6</div>
+                </div>
+            </div>
+        </div> 
+        <!-- team detals -->
+        
+        <!-- footer section -->
+        <div id="page3"></div>
+    </div>
+    <script>
+
+const popupContainer = document.getElementById("popup-container");
+const createAccountButton = document.getElementById("create-account-button"); // Updated ID
+const buyerButton = document.getElementById("buyer-button");
+const sellerButton = document.getElementById("seller-button");
+const closePopupButton = document.getElementById("close-popup-button");
+
+
+createAccountButton.addEventListener("click", () => {
+    popupContainer.style.display = "flex";
+});
+
+buyerButton.addEventListener("click", () => {
+
+});
+
+sellerButton.addEventListener("click", () => {
+
+});
+
+closePopupButton.addEventListener("click", () => {
+    popupContainer.style.display = "none";
+});
+
+
+let slideIndex = 0;
+
+function showSlides() {
+    const slides = document.getElementsByClassName("slide");
+
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+
+    slideIndex++;
+
+    if (slideIndex > slides.length) {
+        slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+
+    setTimeout(showSlides, 2000); // Change image every 2 seconds (2000 milliseconds)
+}
+
+// Start the slideshow when the page loads
+window.onload = showSlides;
+setTimeout(function() {
+    var video = document.getElementById("myVideo");
+    video.play();
+  }, 5000);
+
+    </script>
+</body>
+</html>

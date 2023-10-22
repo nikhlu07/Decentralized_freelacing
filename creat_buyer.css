@@ -1,0 +1,138 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    
+}
+#creat_buyer_page > nav>.but>button>a{
+    color: inherit;
+    text-decoration: none;
+}
+#creat_buyer_main {
+    width: 100vw;
+    margin: 0 auto;
+    background-color: #1a1a1a;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+form {
+    margin: 40px 0;
+    width: 50%;
+    left: 50%;
+    transform: translateX(50%);
+}
+
+label {
+    font-weight: bold;
+    color: #fff; /* Adjusted label text color */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #333;
+    background-color: #333;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+}
+
+textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #333;
+    background-color: #333;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#creat_buyer_page > nav > div > button {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#creat_buyer_page > nav > div > button:hover {
+    transition-delay: 0.3s;
+    transform: scale(1.1);
+    background-color: rgba(0, 255, 255, 0.148);
+}
+
+#creat_buyer_page > nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 8vh;
+    width: 100vw;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    background-color: rgba(0, 255, 255, 0.148);
+}
+
+#creat_buyer_page > nav > div > button {
+    padding: 7px 20px;
+    border-radius: 50px;
+    border: none;
+    margin-right: 10px;
+    background-color: #fff;
+    color: #000;
+}
+
+#creat_buyer_page > nav > h3 {
+    margin: 0;
+    color: #fff;
+}
+
+#submit {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style specific elements for the form */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #333;
+    background-color: #333;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Additional styling can be applied as needed */

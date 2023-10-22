@@ -1,0 +1,120 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery -->
+        <link rel="stylesheet" href="buyer_home.css">
+        <style>
+            .close-button {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                font-size: 20px;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            <!-- Navbar -->
+        </nav>
+        <header>
+            <input type="text" id="searchBox" placeholder="Search...">
+        </header>
+        <div id="coverPage">
+            <div class="category" data-category="Machine Learning">Machine Learning</div>
+            <div class="category" data-category="Automation">Automation</div>
+            <div class="category" data-category="Blockchain">Blockchain</div>
+            <div class="category" data-category="Web Development">Web Development</div>
+            <div class="category" data-category="App Development">App Development</div>
+            <div class="category" data-category="All">All</div>
+        </div>
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <span class="close-button" id="closePopup">close</span>
+                <!-- Cards with seller details will be displayed here -->
+            </div>
+        </div>
+         <script>
+        $(document).ready(function () {
+            // Sample seller data
+            const sellersData = [
+                {
+                    name: 'Seller 1',
+                    category: 'Machine Learning',
+                    description: 'Experienced in ML and AI.',
+                    contact: 'seller1@example.com',
+                },
+                {
+                    name: 'Seller 2',
+                    category: 'Web Development',
+                    description: 'Front-end and back-end developer.',
+                    contact: 'seller2@example.com',
+                },
+                {
+                    name: 'Seller 3',
+                    category: 'Automation',
+                    description: 'Automation specialist.',
+                    contact: 'seller3@example.com',
+                }
+                // Add more seller objects as needed
+            ];
+
+            // Function to create seller cards.
+            function createSellerCard(seller) {
+                // Create HTML elements for a seller card.
+                const card = $('<div class="seller-card"></div>');
+                card.append($('<h2>' + seller.name + '</h2>'));
+                card.append($('<p>' + seller.description + '</p>'));
+                card.append($('<p>Contact: ' + seller.contact + '</p>'));
+
+                // Create the close button and add it to the card.
+                const closeBtn = $('<span class="close-button">close</span>');
+                closeBtn.click(function () {
+                    // Close the popup when the close button is clicked.
+                    $('#popup').fadeOut();
+                });
+                card.append(closeBtn);
+
+                // Append the card to the popup.
+                $('#popup .popup-content').append(card);
+            }
+
+            // Display seller details in the popup.
+            function displaySellerDetails(category) {
+                // Clear the popup.
+                $('#popup .popup-content').empty();
+
+                // Filter sellers based on the selected category.
+                let filteredSellers = sellersData.filter(seller => seller.category === category);
+
+                // Create and display seller cards in the popup.
+                filteredSellers.forEach(seller => createSellerCard(seller));
+
+                // Show the popup.
+                $('#popup').fadeIn();
+            }
+
+            // Handle category click event.
+            $('.category').click(function () {
+                let category = $(this).data('category');
+                displaySellerDetails(category);
+            });
+
+            // Close the popup when clicking the close button.
+            $('.close-button').click(function () {
+                $('#popup').fadeOut();
+            });
+
+            // Handle the search box functionality (filtering based on search text).
+            $('#searchBox').on('input', function () {
+                // Implement filtering logic based on the search text.
+            });
+
+            // Initial data loading and page setup can be done here.
+
+            // No need to fetch data from an API since you have sample data in this script.
+        });
+    </script>
+    </body>
+    </html>

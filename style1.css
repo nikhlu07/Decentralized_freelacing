@@ -1,0 +1,62 @@
+.slideshow-container {
+    width: 100vw;
+    height: 92vh;
+    top: 8vh;
+    transform: translateY(8vh);
+    margin: 0 auto;
+}
+
+
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.team-leaders-heading {
+    font-size: 36px;
+    margin: 20px 0;
+    padding-right: 20px;
+    text-align: center;
+    color: #333;
+    transition: font-size 0.3s, color 0.3s;
+}
+
+.team-leaders-heading:hover {
+    font-size: 72px;
+    color: #000; /* Change to your desired hover color */
+    text-shadow: 4px 4px 8px rgba(116, 112, 112, 0.824);
+}
+#about-us-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f2f2f2; /* Change to your preferred background color */
+    color: #fff; /* Change to your preferred text color */
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    padding: 30px;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 40px;
+    color: #000;
+    text-shadow: 5px 5px 10px rgba(116, 112, 112, 0.824);;
+}
+
+p {
+    font-size: 28px;
+    text-align: center;
+    color: #000;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+

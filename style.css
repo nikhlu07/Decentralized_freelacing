@@ -1,0 +1,496 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Index page styles */
+#page {
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+}
+
+#page > nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 8vh;
+    width: 100vw;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #000;
+    background-color: #000;
+}
+
+#page > nav > h3 > a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#page > nav > div > button {
+    padding: 7px 20px;
+    border-radius: 50px;
+    border: none;
+    margin-right: 10px;
+    background-color: #fff;
+}
+
+#page > nav > div > button {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#page > nav > div > button:hover {
+    transition-delay: 0.3s;
+    transform: scale(1.1);
+    background-color: rgba(197, 192, 192, 0.797);
+}
+
+#page > nav > h3 {
+    margin: 0;
+    color: #fff;
+}
+
+.but > button > a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#page1 {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card {
+    width: calc(33.33% - 20px);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.card-image {
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.card-image img {
+    max-width: 100%;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.2);
+}
+
+.card-name {
+    text-align: center;
+    padding: 10px;
+}
+
+#page2 {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(0, 0, 0);
+}
+
+#page3 {
+    height: 100vh;
+    width: 100vw;
+    background-color: red;
+}
+
+#popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 5px x 10px rgba(0, 0, 0, 1);
+}
+
+#popup {
+    background-color: rgba(40, 44, 44, 0.546);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+#popup > h2 {
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+#close-popup-button {
+    background: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#buyer-button > a,
+#seller-button > a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#buyer-button,
+#seller-button {
+    background: #303430b9;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+/* Seller login page styles */
+#sellerpage {
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+}
+
+#sellerpage > nav > div > button {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#sellerpage > nav > div > button:hover {
+    transition-delay: 0.3s;
+    transform: scale(1.1);
+    background-color: rgba(197, 192, 192, 0.797);
+}
+
+#sellerpage > nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 8vh;
+    width: 100vw;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #000;
+    background-color: #000;
+}
+
+#sellerpage > nav > div > button {
+    padding: 7px 20px;
+    border-radius: 50px;
+    border: none;
+    margin-right: 10px;
+    background-color: #fff;
+}
+
+#sellerpage > nav > h3 {
+    margin: 0;
+    color: #fff;
+}
+
+.Parent {
+    display: flex;
+    flex-direction: row;
+    padding-top: 8vh;
+}
+
+.left {
+    width: 55%;
+    height: 100vh;
+    background-color: #fff;
+    text-align: right;
+    overflow: hidden;
+}
+
+.left > img {
+    width: 100%;
+    height: 140%;
+    padding-bottom: 20vh;
+    margin-top: -10vh;
+    animation: fadeIn 4s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.right {
+    width: 45%;
+    color: white;
+    height: 100vh;
+    padding-top: 20vh;
+}
+
+.login-container {
+    width: 350px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #3d3d3d;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgb(0, 0, 0);
+    transition: transform 0.8s, box-shadow 0.3s;
+}
+
+.login-container:hover {
+    transform: scale(1.20);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+.login-container h2 {
+    text-align: center;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.login-container input[type="email"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 0;
+    border-radius: 12px;
+    background-color: rgb(162, 169, 169);
+    margin-top: 20px;
+    height: 50px;
+    transition: background-color 0.3s;
+}
+
+.login-container input[type="email"]::placeholder,
+.login-container input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.login-container input[type="email"]:focus,
+.login-container input[type="password"]:focus {
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.login-container button {
+    width: 47%;
+    padding: 10px;
+    margin-right: 10px;
+    color: rgb(255, 254, 254);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    height: 50px;
+    background-color: rgba(9, 9, 9, 0.148);
+    transition: background-color 0.3s;
+}
+
+.login-container button[type="reset"] {
+    margin-right: 0;
+}
+
+.login-container button:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Buyer login page styles */
+#buyerpage {
+    height: 100vh;
+    width: 100vw;
+    background-color: #ffffff;
+}
+
+#buyerpage > nav > div > button {
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+#buyerpage > nav > div > button:hover {
+    transition-delay: 0.3s;
+    transform: scale(1.1);
+    background-color: rgba(197, 192, 192, 0.797);
+}
+
+#buyerpage > nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    height: 8vh;
+    width: 100vw;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #000;
+    background-color: #000;
+}
+
+#buyerpage > nav > div > button {
+    padding: 7px 20px;
+    border-radius: 50px;
+    border: none;
+    margin-right: 10px;
+    background-color: #fff;
+}
+
+#buyerpage > nav > h3 {
+    margin: 0;
+    color: #fff;
+}
+
+.buyerParent {
+    display: flex;
+    flex-direction: row;
+    padding-top: 8vh;
+}
+
+.buyerleft {
+    width: 55%;
+    height: 100vh;
+    background-color: #fff;
+    text-align: right;
+    overflow: hidden;
+}
+
+.buyerleft > img {
+    width: 100%;
+    height: 140%;
+    padding-bottom: 20vh;
+    margin-top: -10vh;
+    animation: fadeIn 4s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.buyerright {
+    width: 45%;
+    color: rgb(255, 255, 255);
+    height: 100vh;
+    padding-top: 20vh;
+}
+
+.buyerlogin-container {
+    width: 350px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    background-color: #3d3d3d;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgb(0, 0, 0);
+    transition: transform 0.8s, box-shadow 0.3s;
+}
+
+.buyerlogin-container:hover {
+    transform: scale(1.20);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.7);
+}
+
+.buyerlogin-container h2 {
+    text-align: center;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.buyerlogin-container input[type="email"],
+.buyerlogin-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 0;
+    border-radius: 12px;
+    background-color: rgb(162, 169, 169);
+    margin-top: 20px;
+    height: 50px;
+    transition: background-color 0.3s;
+}
+
+.buyerlogin-container input[type="email"]::placeholder,
+.buyerlogin-container input[type="password"]::placeholder {
+    color: #ffffff;
+}
+
+.buyerlogin-container input[type="email"]:focus,
+.buyerlogin-container input[type="password"]:focus {
+    border: 1px solid #ffffff64;
+}
+
+.buyerlogin-container button {
+    width: 47%;
+    padding: 10px;
+    margin-right: 10px;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 20px;
+    height: 50px;
+    background-color: rgba(9, 9, 9, 0.148);
+    transition: background-color 0.3s;
+}
+
+.buyerlogin-container button[type="reset"] {
+    margin-right: 0;
+}
+
+.buyerlogin-container button:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.buyerlogin-container button[type="reset"] {
+    margin-right: 0;
+}
+
+/* Add more media queries and responsive styles as needed */
+

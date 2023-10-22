@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="creat_account_formstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+</head>
+<body>
+    <div id="creat_seller_main">
+        <div id="creat_seller_page">
+            <nav>
+                <h3>Operation Code</h3>
+                <div class="but">
+                    <button><a href="seller.html">Seller</a></button>
+                    <button><a href="buyer.html">Buyer</a></button>
+                    <button><a href="index.html">Home</a></button>
+                </div>
+            </nav>
+            <div class="form">
+                <form action="" method="post">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="password">Password:</label><br>
+                    <input type="password" id="password" name="password" required><br><br>
+
+                    <label for="skills">Skills (Add more if needed):</label><br>
+                    <div id="skills-container">
+                        <input type="text" name="skills[]" required>
+                    </div>
+                    <button type="button" id="addSkill">Add Skill</button><br><br>
+
+                    <label for="projects">Projects (Add more if needed):</label>
+                    <div id="projects-container">
+                        <input type="text" name="projects[]" required>
+                    </div>
+                    <button type="button" id="addProject">Add Project</button><br><br>
+
+                    <!-- New section for "Works" with project description -->
+                    <label for="works">Works (Add more if needed):</label>
+                    <div id="works-container">
+                        <div class="work">
+                            <input type="text" name="works[]" required>
+                            <br>
+                            <label for="work-description">Work Description:</label>
+                            <textarea name="work_descriptions[]" rows="4" cols="50" required></textarea>
+                            <button type="button" class="removeWork">Remove Work</button>
+                        </div>
+                    </div>
+                    <button type="button" id="addWork">Add Work</button><br><br>
+
+                    <label for="profile_description">Profile Description:</label><br>
+                    <textarea id="profile_description" name="profile_description" rows="4" cols="50" required></textarea><br><br>
+
+                    <label for="hourly_rate">Charges per Hour:</label><br>
+                    <input type="number" id="hourly_rate" name="hourly_rate" required><br><br>
+
+                    <label for="other_info">Other Information (Add more if needed):</label><br>
+                    <div id="other-info-container">
+                        <input type="text" name="other_info[]" required>
+                    </div>
+                    <button type="button" id="addOtherInfo">Add Information</button><br><br>
+                    <div id="submit">
+                    <input type="submit" id="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to dynamically add and remove input fields
+        document.getElementById('addSkill').addEventListener('click', function() {
+            const skillsContainer = document.getElementById('skills-container');
+            const newInput = document.createElement('input');
+            newInput.type = 'text';
+            newInput.name = 'skills[]';
+            newInput.required = true;
+            const removeButton = document.createElement('button');
+            removeButton.type = 'button';
+            removeButton.textContent = 'Remove Skill';
+            removeButton.addEventListener('click', function() {
+                skillsContainer.removeChild(newInput);
+                skillsContainer.removeChild(removeButton);
+            });
+            skillsContainer.appendChild(newInput);
+            skillsContainer.appendChild(removeButton);
+        });
+
+        document.getElementById('addProject').addEventListener('click', function() {
+            const projectsContainer = document.getElementById('projects-container');
+            const newInput = document.createElement('input');
+            newInput.type = 'text';
+            newInput.name = 'projects[]';
+            newInput.required = true;
+            const removeButton = document.createElement('button');
+            removeButton.type = 'button';
+            removeButton.textContent = 'Remove Project';
+            removeButton.addEventListener('click', function() {
+                projectsContainer.removeChild(newInput);
+                projectsContainer.removeChild(removeButton);
+            });
+            projectsContainer.appendChild(newInput);
+            projectsContainer.appendChild(removeButton);
+        });
+
+        // JavaScript to add and remove "Works" with project descriptions
+        document.getElementById('addWork').addEventListener('click', function() {
+            const worksContainer = document.getElementById('works-container');
+            const workDiv = document.createElement('div');
+            workDiv.classList.add('work');
+            const workInput = document.createElement('input');
+            workInput.type = 'text';
+            workInput.name = 'works[]';
+            workInput.required = true;
+            const workDescriptionLabel = document.createElement('label');
+            workDescriptionLabel.textContent = 'Work Description:';
+            const workDescriptionTextarea = document.createElement('textarea');
+            workDescriptionTextarea.name = 'work_descriptions[]';
+            workDescriptionTextarea.rows = 4;
+            workDescriptionTextarea.cols = 50;
+            workDescriptionTextarea.required = true;
+            const removeWorkButton = document.createElement('button');
+            removeWorkButton.type = 'button';
+            removeWorkButton.classList.add('removeWork');
+            removeWorkButton.textContent = 'Remove Work';
+            removeWorkButton.addEventListener('click', function() {
+                worksContainer.removeChild(workDiv);
+            });
+            workDiv.appendChild(workInput);
+            workDiv.appendChild(workDescriptionLabel);
+            workDiv.appendChild(workDescriptionTextarea);
+            workDiv.appendChild(removeWorkButton);
+            worksContainer.appendChild(workDiv);
+        });
+
+        // JavaScript to remove "Works" dynamically
+        document.addEventListener('click', function(event) {
+            if (event.target.classList.contains('removeWork')) {
+                event.target.parentElement.remove();
+            }
+        });
+    </script>
+</body>
+</html>
