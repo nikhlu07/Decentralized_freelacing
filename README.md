@@ -3,6 +3,12 @@
 The Decentralized Freelancing Platform (DAPP) is a blockchain-based marketplace designed to connect clients and freelancers for various tasks and projects. It incorporates decentralized features for enhanced security, transparency, and fairness in the freelancing industry. This platform also integrates with a web application and leverages machine learning for AI matchmaking.
 
 ## Getting Started
+## steps
+-> For getting the code first clone the git.
+-> Then use yarn install.
+-> Then yarn hardhat node
+-> and then yarn hardhat deploy.js/ network
+-
 Deploy the Smart Contract: Deploy the DappWorks Smart Contract to a compatible blockchain. Ensure that you have the contract's address.
 
 Interact with the Contract: Users can interact with the smart contract using a Dapp (decentralized application) or directly through web3 libraries. The following functions are available:
